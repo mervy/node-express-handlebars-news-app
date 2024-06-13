@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-login-with-handlebars",
+  "version": "1.0.0",
+  "description": "Sistema de login com node, mongo e handlebars",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon run ./src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {    
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "file-uri-to-path": "^2.0.0",
+    "nodemon": "^3.1.3"      
+  }
+}
