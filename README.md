@@ -1996,4 +1996,3 @@ Um bom nome para o repositório deste projeto poderia ser algo que reflita clara
 5. **nodejs-express-newsroom**
 
 Escolha um nome que seja descritivo o suficiente para que outros desenvolvedores entendam do que se trata o projeto ao verem o nome do repositório. Certifique-se também de verificar se o nome está disponível no GitHub antes de finalizar sua escolha.
-
