@@ -1,6 +1,7 @@
 import express from 'express';
 import News from '../models/News.js';
 import Category from '../models/Category.js';
+import Author from '../models/Author.js';
 
 const router = express.Router();
 
@@ -12,11 +13,16 @@ router.get('/', async (req, res) => {
     delete req.session.success;
 
     const news = await News.find();
-    const cats = await Category.find();
+    const cats = await Category.find().lean();
+    console.log(cats)
 
-    res.render('home', { title: 'Home', news, cats, successMessage, errorMessage });
+    res.render('home', { title: 'Home', cats, successMessage, errorMessage });
 });
 
+router.get('/dashboard', async (req, res) => {
+    const authors = await Author.find().lean();
+    res.render('dashboard', { title: 'Dashboard', authors });
+})
 
 router.post('/insert-news', async (req, res) => {
     try {
@@ -44,6 +50,23 @@ router.post('/categories', async (req, res) => {
         res.status(500).send('Erro ao inserir a categoria');
         req.session.error = `Erro ao inserir a categoria: ${error.message}`;
         res.redirect('/');
+    }
+});
+
+router.post('/insert/author', async (req, res) => {
+    try {
+        const authorData = { ...req.body }
+        console.log(authorData)
+        const author = new Author(authorData);
+        await author.save();
+
+        // Armazena a mensagem de sucesso
+        req.session.success = 'Autor cadastrado com sucesso!';
+        res.status(200).redirect('/signup');
+
+    } catch (error) {
+        req.session.error = `Erro ao cadastrar o autor: ${error.message}`;
+        res.status(500).redirect('/signup');
     }
 });
 

@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<div class="container mt-5">
+<div class="container my-5">
     <h1 class="mb-4">Criar Nova Categoria</h1>
     {{#if successMessage}}
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -61,39 +61,14 @@
         <tbody>
             {{#each cats}}
             <tr>
-                <td>{{this._id}}</td>
-                <td>{{this.name}}</td>
-                <td>{{this.description}}</td>
-                <td>{{this.isActive}}</td>
+                <td>{{ _id }}</td>
+                <td>{{ name }}</td>
+                <td>{{ description }}</td>
+                <td>{{ isActive }}</td>
             </tr>
             {{/each}}
         </tbody>
     </table>
 </article>
-
-<article class="container">
-    <h2>News</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Título</th>
-                <th scope="col">Categoria</th>
-                <th scope="col">Autor</th>
-                <th scope="col">Visitante</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each news}}
-            <tr>
-                <td>{{this.titulo}}</td>
-                <td>{{this.categoria.nome}}</td>
-                <td>{{this.autor.nome}}</td>
-                <td>{{this.visitante.nome}}</td>
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
-</article>
-
 
 {{> footer }}

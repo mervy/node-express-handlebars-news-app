@@ -2,10 +2,23 @@
 
 <div class="container col-4">
     <h2 class='my-5 text-center'>Login</h2>
+    {{#if successMessage}}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{successMessage}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {{/if}}
+    {{#if errorMessage}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{errorMessage}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {{/if}}
     <form action="/auth" method="post">
         <div class="mb-3">
             <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" value="rogerio@gkult.net">
+            <input type="email" class="form-control" name="email" aria-describedby="emailHelp"
+                value="rogerio@gkult.net">
             <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3">
