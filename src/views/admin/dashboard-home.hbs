@@ -1,0 +1,53 @@
+<h2 class="mt-5 mb-2">Categories</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Description</th>
+            <th scope="col">Ativa?</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each categories}}
+        <tr>
+            <td>{{ _id }}</td>
+            <td>{{ name }}</td>
+            <td>{{ description }}</td>
+            <td>{{ isActive }}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+<h2 class="mt-5 mb-2">Authors</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Avatar</th>
+            <th scope="col">Created</th>
+            <th scope="col">Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each authors}}
+        <tr>
+            <td>{{ _id }}</td>
+            <td>{{ name }}</td>
+            <td>{{ surname }}</td>
+            <td>{{ username }}</td>
+            <td>{{ email }}</td>
+            <td>{{ password }}</td>
+            <td>{{ avatar }}</td>
+            <td>{{ createdAt }}</td>
+            <td>{{ isActive }}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

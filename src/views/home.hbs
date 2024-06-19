@@ -16,37 +16,6 @@
     </div>
 </div>
 
-<div class="container my-5">
-    <h1 class="mb-4">Criar Nova Categoria</h1>
-    {{#if successMessage}}
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{successMessage}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    {{/if}}
-    {{#if errorMessage}}
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{errorMessage}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    {{/if}}
-    <form action="/categories" method="POST">
-        <div class="mb-3">
-            <label for="name" class="form-label">Nome:</label>
-            <input type="text" class="form-control" id="name" name="name" required>
-        </div>
-        <div class="mb-3">
-            <label for="description" class="form-label">Descrição:</label>
-            <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
-        </div>
-        <div class="form-check mb-3">
-            <input type="checkbox" class="form-check-input" id="isActive" name="isActive">
-            <label class="form-check-label" for="isActive">Ativo</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Criar Categoria</button>
-    </form>
-</div>
-
 <article class="container">
     <h2>Categorias</h2>
     <table class="table table-striped">

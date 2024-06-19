@@ -33,7 +33,11 @@ app.engine(
     exphbs.engine({
         defaultLayout: "master",
         extname: ".hbs",
-        partialsDir: path.join(__dirname, "views/partials"),
+        partialsDir: [
+            path.join(__dirname, "views/partials"),
+            path.join(__dirname, "views/admin"),
+            path.join(__dirname, "views/portal")
+        ]
     })
 );
 app.set("view engine", "hbs");

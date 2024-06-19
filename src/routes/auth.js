@@ -14,16 +14,6 @@ router.get('/login', (req, res) => {
     res.render('login', { title: 'Login', successMessage, errorMessage })
 })
 
-router.get('/signup', (req, res) => {
-
-    const successMessage = req.session.success;
-    const errorMessage = req.session.error;
-    delete req.session.error;
-    delete req.session.success;
-
-    res.render('signup', { title: 'Sign Up' })
-})
-
 router.post('/auth', async (req, res) => {
 
     const { email, password } = req.body;
@@ -43,6 +33,7 @@ router.post('/auth', async (req, res) => {
 
         if (isMatch) {
             req.session.success = 'Autenticação bem-sucedida';
+            req.session.userId = user._id; 
             return res.status(200).redirect('/dashboard');
 
         } else {
