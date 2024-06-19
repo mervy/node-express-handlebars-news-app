@@ -1,0 +1,54 @@
+{{> header }}
+
+<div class="container col-md-12 col-lg-4">
+
+    <h2 class='my-5 text-center'>Sign Up</h2>
+
+    {{#if successMessage}}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{successMessage}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {{/if}}
+
+    {{#if errorMessage}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{errorMessage}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {{/if}}
+    
+    <form action="/insert/author" method="post">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Your first name">
+        </div>
+        <div class="mb-3">
+            <label for="surname" class="form-label">Surname</label>
+            <input type="text" class="form-control" name="surname" placeholder="Your surname">
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" placeholder="Your username">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Your e-mail">
+        </div>
+
+        <div class="mb-3">
+            <label for="Password" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="P#ss&W0rL$4">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Avatar</label>
+            <input type="file" class="form-control" name="avatar">
+        </div>
+        <input type="hidden" name="isActive" value="true">
+        <div class="mb-3 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </div>
+    </form>
+</div>
+
+{{> footer }}

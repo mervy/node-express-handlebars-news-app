@@ -10,7 +10,7 @@ const authorSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    nickname: {
+    username: {
         type: String,
         unique: true,
         required: true
